@@ -38,8 +38,8 @@
 
 #### Trained Model
 
-* **[CSD, Rain1400, ITS, OTS]** Download link: [TBA](https://github.com/fingerk28)
-* **[Snow100k, Raindrop, Rainfog]** Download link: [TBA](https://github.com/fingerk28)
+* **[Setting1] [CSD, Rain1400, ITS, OTS]** Download link: [TBA](https://github.com/fingerk28)
+* **[Setting2] [Snow100k, Raindrop, Rainfog]** Download link: [TBA](https://github.com/fingerk28)
 
 #### Install
 
