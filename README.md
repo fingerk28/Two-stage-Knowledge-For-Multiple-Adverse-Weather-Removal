@@ -68,9 +68,10 @@ Please cite this paper in your publications if it is helpful for your tasks.
 ```bib
 @inproceedings{Chen2022MultiWeatherRemoval,
   title={Learning Multiple Adverse Weather Removal via Two-stage Knowledge Learning and Multi-contrastive Regularization: Toward a Unified Model},
-  author={Weiting Chen and Zhikai Huang and Chengche Tsai and Haohsiang Yang and Jianjiun Ding and Syyen Kuo},
+  author={Chen, Wei-Ting and Huang, Zhi-Kai and Tsai, Cheng-Che and Yang, Hao-Hsiang and Ding, Jian-Jiun and Kuo, Sy-Yen},
   journal={2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2022}
 }
 ```
+
 
