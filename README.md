@@ -62,7 +62,7 @@ python main.py --train --save-dir CHECKPOINT_DIR
 ```shell
 python main.py --test --checkpoint CHECKPOINT_PATH
 ```
-#### Other Works for Image Restoration
+### Other Works for Image Restoration
 
 You can also refer to our previous works:
 
