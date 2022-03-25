@@ -28,7 +28,16 @@
 
 ## Quantitative Result
 
-![image](https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal/blob/main/images/quantitative_result.png)
+<table>
+  <tr>
+    <td align="center"> <img src = "https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal/blob/main/images/quantitative_result.png" width="400"> </td>
+    <td align="center"> <img src = "https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal/blob/main/images/quantitative_result.png" width="400"> </td>
+  </tr>
+  <tr>
+    <td align="center"><p><b>**Setting1**</b></p></td>
+    <td align="center"><p><b>**Setting2**</b></p></td>
+  </tr>
+</table>
 
 ## Qualitative Result
 
