@@ -56,7 +56,7 @@
 
 #### Pre-trained Models
 
-* **[Setting1] [CSD, Rain1400, ITS, OTS]** Download link: [TBA](https://github.com/fingerk28)
+* **[Setting1] [CSD, Rain1400, ITS, OTS]** Download link: [Google Drive]([https://github.com/fingerk28](https://drive.google.com/file/d/1TP2IFPDJYlNnV2QJO6_2UrAmoY6IOFpQ/view?usp=sharing))
 * **[Setting2] [Snow100k, Raindrop, Rainfog]** Download link: [TBA](https://github.com/fingerk28)
 
 #### Install
