@@ -43,20 +43,24 @@
 
 <table>
   <tr>
-    <td align="center"> <img src = "https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal/blob/main/images/qualitative_result.png" width="400"> </td>
-    <td align="center"> <img src = "https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal/blob/main/images/qualitative_result.png" width="400"> </td>
+    <td align="center"> <img src = "https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal/blob/main/images/qualitative_result.png"> </td>
   </tr>
   <tr>
     <td align="center"><p><b>Setting1</b></p></td>
-    <td align="center"><p><b>Setting2</b></p></td>
   </tr>
 </table>
+
 
 ## Usage
 
 #### Pre-trained Models
 
-* **[Setting1] [CSD, Rain1400, ITS, OTS]** Download link: [Google Drive](https://drive.google.com/file/d/1TP2IFPDJYlNnV2QJO6_2UrAmoY6IOFpQ/view?usp=sharing)
+* **[Setting1] [CSD, Rain1400, ITS, OTS]** Download link: 
+  * **CSD Teacher** &rarr; [Google Drive](https://drive.google.com/file/d/12IiwMeWI6Li5USrtUeaRCrqkHYmPBdKE/view?usp=sharing)
+  * **Rain1400 Teacher** &rarr; [Google Drive](https://drive.google.com/file/d/11Z7_0awGLbFtOzbi2Mzra0Cz1q8aEfg1/view?usp=sharing)
+  * **ITS, OTS Teacher** &rarr; [Google Drive](https://drive.google.com/file/d/1eCJ47fYdcuirqZW7xHhu0SgoX_pre2D5/view?usp=sharing)
+  * **Student** &rarr; [Google Drive](https://drive.google.com/file/d/1TP2IFPDJYlNnV2QJO6_2UrAmoY6IOFpQ/view?usp=sharing)
+
 * **[Setting2] [Snow100k, Raindrop, Rainfog]** Download link: [TBA](https://github.com/fingerk28)
 
 #### Install
@@ -65,29 +69,29 @@
 git clone https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-Weather-Removal.git
 ```
 
-#### Requirement
-
-```shell
-pip install -r requirements.txt
-```
 #### Training
 
 ```shell
-python main.py --train --save-dir CHECKPOINT_DIR 
+python train.py --teacher TEACHER_CHECKPOINT_PATH_0 TEACHER_CHECKPOINT_PATH_1 TEACHER_CHECKPOINT_PATH_2 --teacher_projectors TEACHER_PROJECTORS_CHECKPOINT_PATH --save-dir RESULTS_WILL_BE_SAVED_HERE
 ```
+> **--teacher** &rarr; input any amout of teacher checkpoint path
+
 #### Inference
 
 ```shell
-python main.py --test --checkpoint CHECKPOINT_PATH
+python inference.py --dir_path DIR_OF_TEST_IMAGES --checkpoint CHECKPOINT_PATH --save_dir RESULTS_WILL_BE_SAVED_HERE 
 ```
-### Other Works for Image Restoration
+
+
+
+## Other Works for Image Restoration
 
 You can also refer to our previous works:
 
-Desnowing-[[JSTASR]](https://github.com/weitingchen83/JSTASR-DesnowNet-ECCV-2020) (ECCV'20) and [[HDCW-Net]](https://github.com/weitingchen83/ICCV2021-Single-Image-Desnowing-HDCWNet) (ICCV'21)<br>
-Dehazing-[[PMS-Net]](https://github.com/weitingchen83/PMS-Net) (CVPR'19) and [[PMHLD]](https://github.com/weitingchen83/Dehazing-PMHLD-Patch-Map-Based-Hybrid-Learning-DehazeNet-for-Single-Image-Haze-Removal-TIP-2020) (TIP'20)<br>
-Deraining-[[ContouletNet]](https://github.com/cctakaet/ContourletNet-BMVC2021) (BMVC'21)<br>
-Image Relighting-[[MB-Net]](https://github.com/weitingchen83/NTIRE2021-Depth-Guided-Image-Relighting-MBNet) (NTIRE'21 1st solution) and [[S3Net]](https://github.com/dectrfov/NTIRE-2021-Depth-Guided-Image-Any-to-Any-relighting) (NTIRE'21 3 rd solution)<br>
+* Desnowing &rarr; [[JSTASR]](https://github.com/weitingchen83/JSTASR-DesnowNet-ECCV-2020) (ECCV'20) and [[HDCW-Net]](https://github.com/weitingchen83/ICCV2021-Single-Image-Desnowing-HDCWNet) (ICCV'21)
+* Dehazing &rarr; [[PMS-Net]](https://github.com/weitingchen83/PMS-Net) (CVPR'19) and [[PMHLD]](https://github.com/weitingchen83/Dehazing-PMHLD-Patch-Map-Based-Hybrid-Learning-DehazeNet-for-Single-Image-Haze-Removal-TIP-2020) (TIP'20)
+* Deraining &rarr; [[ContouletNet]](https://github.com/cctakaet/ContourletNet-BMVC2021) (BMVC'21)
+* Image Relighting &rarr; [[MB-Net]](https://github.com/weitingchen83/NTIRE2021-Depth-Guided-Image-Relighting-MBNet) (NTIRE'21 1st solution) and [[S3Net]](https://github.com/dectrfov/NTIRE-2021-Depth-Guided-Image-Any-to-Any-relighting) (NTIRE'21 3 rd solution)
 
 
 
@@ -101,5 +105,4 @@ Please cite this paper in your publications if it is helpful for your tasks.
   year={2022}
 }
 ```
-
 
