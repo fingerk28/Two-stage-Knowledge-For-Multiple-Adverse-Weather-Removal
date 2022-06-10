@@ -75,6 +75,56 @@ git clone https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-
 python train.py --teacher TEACHER_CHECKPOINT_PATH_0 TEACHER_CHECKPOINT_PATH_1 TEACHER_CHECKPOINT_PATH_2 --teacher_projectors TEACHER_PROJECTORS_CHECKPOINT_PATH --save-dir RESULTS_WILL_BE_SAVED_HERE
 ```
 > **--teacher** &rarr; input any amout of teacher checkpoint path
+>
+> ---
+>
+> You need to prepare the meta file (.json) under the `./meta`
+>
+> Class `DatasetForTrain` and `DatasetForValid` would take all meta files as the datasources.
+>
+> The structure should be:
+>
+> ```
+> .
+> ├── inference.py
+> ├── meta
+> │   ├── train
+> │   │   ├── CSD_meta_train.json
+> │   │   └── Rain1400_meta_train.json
+> │   │   └── ...
+> │   └── valid
+> │       ├── CSD_meta_valid.json
+> │       └── Rain1400_meta_valid.json
+> │       └── ...
+> ├── models
+> │   ├── ...
+> ├── train.py
+> └── utils
+>     ├── ...
+> 
+> ```
+>
+> ---
+>
+> The structure of the `.json` file should be:
+>
+> ```
+> [
+>     [
+>         "path_to_GT_image0",
+>         "path_to_Input_image0"
+>     ],
+>     [
+>         "path_to_GT_image1",
+>         "path_to_Input_image1"
+>     ],
+>     [
+>     		 ...
+>     ],
+>     ...
+>     
+> ]
+> ```
 
 #### Inference
 
