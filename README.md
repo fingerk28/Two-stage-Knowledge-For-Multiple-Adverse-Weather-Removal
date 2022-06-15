@@ -2,7 +2,7 @@
 
 **[CVPR2022] Official Pytorch based implementation.** 
 
-[[paper]](https://img.shields.io/badge/arXiv-Paper-brightgreen)(https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_Learning_Multiple_Adverse_Weather_Removal_via_Two-Stage_Knowledge_Learning_and_CVPR_2022_paper.pdf)
+[[paper]](https://img.shields.io/badge/arXiv-Paper-brightgreenhttps://openaccess.thecvf.com/content/CVPR2022/papers/Chen_Learning_Multiple_Adverse_Weather_Removal_via_Two-Stage_Knowledge_Learning_and_CVPR_2022_paper.pdf)
 
 <hr />
 
