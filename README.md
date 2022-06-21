@@ -72,7 +72,7 @@ git clone https://github.com/fingerk28/Two-stage-Knowledge-For-Multiple-Adverse-
 #### Training
 
 ```shell
-python train.py --teacher TEACHER_CHECKPOINT_PATH_0 TEACHER_CHECKPOINT_PATH_1 TEACHER_CHECKPOINT_PATH_2 --teacher_projectors TEACHER_PROJECTORS_CHECKPOINT_PATH --save-dir RESULTS_WILL_BE_SAVED_HERE
+python train.py --teacher TEACHER_CHECKPOINT_PATH_0 TEACHER_CHECKPOINT_PATH_1 TEACHER_CHECKPOINT_PATH_2 --save-dir RESULTS_WILL_BE_SAVED_HERE
 ```
 > **--teacher** &rarr; input any amout of teacher checkpoint path
 >
