@@ -8,7 +8,6 @@ from torch.utils.data import DataLoader
 from colorama import Style, Fore, Back
 import argparse
 from tqdm import tqdm
-import random
 
 # import file
 from utils.utils import *
@@ -48,16 +47,7 @@ def evaluate(model, loader):
 
 def main():
 
-	# Set up random seed
-	torch.manual_seed(19870522)
-	torch.cuda.manual_seed(19870522)
-	np.random.seed(19870522)
-	random.seed(19870522)
-	print(Back.WHITE + 'Random Seed: 19870522' + Style.RESET_ALL)
-	print(Fore.RED + "---------------------------------------------------------------" + Style.RESET_ALL)
-
-
-	# get the net function
+	# get the net and dataset function
 	net_func = get_func(args.model)
 	dataset_func = get_func(args.dataset)
 	print(Back.RED + 'Using Model: {}'.format(args.model) + Style.RESET_ALL)

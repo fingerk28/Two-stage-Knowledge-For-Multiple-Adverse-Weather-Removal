@@ -48,17 +48,17 @@ class DatasetForTrain(Dataset):
 		dataset_label = random.randint(0, len(self.datasets)-1)
 		dataset = self.datasets[dataset_label]
 		target_path, input_path = dataset[random.randint(0, len(dataset)-1)]
-		
+
 		target_image = Image.open(target_path).convert('RGB')
 		input_image = Image.open(input_path).convert('RGB')
 		
 		target_image = self.transform(target_image)
 		input_image = self.transform(input_image)
 
-		target_image, input_image,  = self.rand_crop(target_image, input_image)
+		target_image, input_image = self.rand_crop(target_image, input_image)
 		target_image, input_image = self.rand_flip(target_image, input_image)
 
-		return input_image.unsqueeze(0), target_image.unsqueeze(0), dataset_label
+		return target_image, input_image, dataset_label
 	
 	def rand_flip(self, target_image, input_image):
 		if random.random() > 0.5:
@@ -110,24 +110,27 @@ class DatasetForValid(Dataset):
 			input_image = transforms.Resize(((h//16)*16, (w//16)*16))(input_image)
 
 		return target_image, input_image
-	
+
 
 class Collate():
 	def __init__(self, n_degrades) -> None:
 		self.n_degrades = n_degrades
-		self.image_size = 224
 
 	def __call__(self, batch):
 
-		target_images = []
+		target_images = [[] for _ in range(self.n_degrades)]
 		input_images = [[] for _ in range(self.n_degrades)]
 
 		for i in range(len(batch)):
-			input_image, target_image, dataset_label = batch[i]
-			target_images.append(target_image)
-			input_images[dataset_label].append(input_image)
+			target_image, input_image, dataset_label = batch[i]
+			target_images[dataset_label].append(target_image.unsqueeze(0))
+			input_images[dataset_label].append(input_image.unsqueeze(0))
 		
+		for i in range(len(target_images)):
+			if target_images[i] == []:
+				return None, None
+			target_images[i] = torch.cat(target_images[i])
+			input_images[i] = torch.cat(input_images[i])
 		target_images = torch.cat(target_images)
-		input_images = [torch.cat(images) if images != [] else images for images in input_images]
-
+		
 		return target_images, input_images
