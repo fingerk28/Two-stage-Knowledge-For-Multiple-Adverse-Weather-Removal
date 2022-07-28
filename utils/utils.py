@@ -3,6 +3,8 @@ import os
 from colorama import Style, Fore, Back
 import numpy as np
 import importlib
+from . import pytorch_ssim
+from skimage.metrics import structural_similarity as sk_cpt_ssim
 
 
 def get_func(path):
@@ -47,20 +49,15 @@ def save_top_k(model, optimizer, scheduler, top_k_state, k, epoch, save_dir, psn
 
 
 @torch.no_grad()
-def torchPSNR(tar_img, prd_img):
+def torchPSNR(prd_img, tar_img):
+	if not isinstance(prd_img, torch.Tensor):
+		prd_img = torch.from_numpy(prd_img)
+		tar_img = torch.from_numpy(tar_img)
+
 	imdff = torch.clamp(prd_img, 0, 1) - torch.clamp(tar_img, 0, 1)
 	rmse = (imdff**2).mean().sqrt()
 	ps = 20 * torch.log10(1/rmse)
 	return ps
-
-
-def cpt_psnr(img, img_gt, PIXEL_MAX):
-	assert img.max() <= 1. and img.min() >= 0.
-	assert img_gt.max() <= 1. and img_gt.min() >= 0.
-	mse = np.mean((img - img_gt) ** 2)
-	psnr = 20 * np.log10(PIXEL_MAX / np.sqrt(mse))
-	
-	return psnr
 
 
 def rgb2ycbcr(img, only_y=True):
@@ -94,3 +91,18 @@ def rgb2ycbcr(img, only_y=True):
 		
 	return rlt.astype(in_img_type)
 
+
+def cal_psnr(pred_image, gt_image, weather_type):
+	# shape of pred_image and gt_image: [1, 3, H, W]
+	if 'rain' in weather_type:
+		return torchPSNR(rgb2ycbcr(pred_image[0]), rgb2ycbcr(gt_image[0]))
+	else:
+		return torchPSNR(pred_image, gt_image)
+
+
+def cal_ssim(pred_image, gt_image, weather_type):
+	# shape of pred_image and gt_image: [1, 3, H, W]
+	if 'rain' in weather_type:
+		return pytorch_ssim.ssim(pred_image, gt_image).item()
+	else:
+		return sk_cpt_ssim(rgb2ycbcr(pred_image[0]), rgb2ycbcr(gt_image[0]), data_range=1.0, multichannel=True).item()
