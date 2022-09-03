@@ -60,6 +60,10 @@
   * **Student** &rarr; [Google Drive](https://drive.google.com/file/d/1TP2IFPDJYlNnV2QJO6_2UrAmoY6IOFpQ/view?usp=sharing)
 
 * **[Setting2] [Snow100k, Raindrop, Rainfog]** Download link: [TBA](https://github.com/fingerk28)
+  * **Raindrop Teacher** &rarr; [Google Drive](https://drive.google.com/file/d/1Pyoy7-sjCwp_bMcJ8foBcIy9u4G0EwLQ/view?usp=sharing)
+  * **Rainfog Teacher** &rarr; [Google Drive](https://drive.google.com/file/d/17Sub3v3fw8DxjG9EyyqAQNum1YQb1SiA/view?usp=sharing)
+  * **Snow100k Teacher** &rarr; [Google Drive](https://drive.google.com/file/d/1UdjT_3QOcjlUsQ1fG8hMjBwuty9Zn-nH/view?usp=sharing)
+  * **Student** &rarr; [Google Drive](https://drive.google.com/file/d/16Ux9UPCxw6M8tkoHJFrLaRPqUJaPVZAL/view?usp=sharing)
 
 #### Install
 
